@@ -1,6 +1,6 @@
 import heapq
 
-# Define the graph as an adjacency list
+
 graph = {
     'S': ['A', 'B'],
     'A': ['C', 'D'],
@@ -11,7 +11,7 @@ graph = {
     'G': []
 }
 
-# Heuristic values (lower is better; goal node G has 0)
+
 heuristics = {
     'S': 5,
     'A': 4,
@@ -26,7 +26,7 @@ def best_first_search(start, goal):
     visited = set()
     pq = []
 
-    # Push the start node into the priority queue (heuristic, node)
+
     heapq.heappush(pq, (heuristics[start], start))
 
     while pq:
@@ -45,6 +45,4 @@ def best_first_search(start, goal):
                     heapq.heappush(pq, (heuristics[neighbor], neighbor))
 
     print("Goal Node Not Found.")
-
-# Run the Best First Search from S to G
 best_first_search('S', 'G')
